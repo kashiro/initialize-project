@@ -1,4 +1,4 @@
-# initialize project
+# Initialize project
 
 ```shell
 $ prj.sh -t init -d ${DEVICE} -n ${APP_NAME}
@@ -6,7 +6,7 @@ $ prj.sh -t init -d ${DEVICE} -n ${APP_NAME}
 
 e.g. `prj.sh -t init -d sp -n MyAppSp`
 
-# build app
+# Build app
 
 ```shell
 $ prj.sh -t build -d ${DEVICE}
@@ -14,13 +14,13 @@ $ prj.sh -t build -d ${DEVICE}
 
 e.g. `prj.sh -t init -d sp`
 
-# directory
+# Directory
 
-  .
-  ├── dist
-  ├── pc
-  ├── sp
-  └── prj.sh
+    .
+    ├── dist
+    ├── pc
+    ├── sp
+    └── prj.sh
 
 # Modify prject config for myself
 
