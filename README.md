@@ -44,3 +44,13 @@ e.g. `prj.sh -t init -d sp`
         "$": true
     }
 ```
+
+## package.json
+
+add following dependencies
+
+```json
+    "devDependencies": {
+        "grunt-karma": "*" 
+    }
+```
