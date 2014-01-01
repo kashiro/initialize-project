@@ -35,13 +35,31 @@ e.g. `prj.sh -t init -d sp`
   },
 ```
 
+## package.json
+
+add following devdependency
+
+```javascript
+  "devDependencies": {
+    "karma-expect": "~1.0.0",
+    "karma-sinon": "~0.0.1",
+    "karma-mocha": "*"
+  }
+```
+
 ## .jshint.rc
 
 ```json
     "globals": {
         "_": true,
         "Global": true,
-        "$": true
+        "$": true,
+        "expect": true,
+        "sinon" : true,
+        "describe": true,
+        "it"      : true,
+        "beforeEach": true,
+        "afterEach" : true
     }
 ```
 
@@ -51,19 +69,21 @@ e.g. `prj.sh -t init -d sp`
 
 ```javascript
         karma: {
-            options: {
-                frameworks: 'mocha',
-                files: [
-                    '<%= yeoman.app %>/bower_components/**/*.js',
-                    '<%= yeoman.app %>/scripts/{,*/}*.js',
-                    'test/bower_components/chai/chai.js',
-                    'test/bower_components/mocha/mocha.js',
-                    'test/spec/{,*/}*.js',
-                    '!<%= yeoman.app %>/scripts/main.js'
-                ],
-                runnerPort: 8080,
-                singleRun: true,
-                browsers: ['PhantomJS']
+            unit: {
+                options: {
+                    frameworks: ['mocha', 'expect', 'sinon'],
+                    runnerPort: 8080,
+                    singleRun: true,
+                    browsers: ['PhantomJS'],
+                    files: [
+                        '<%= yeoman.app %>/bower_components/**/*.js',
+                        '<%= yeoman.app %>/scripts/{,*/}*.js',
+                        'test/spec/{,*/}*.js',
+                    ],
+                    exclude: [
+                        '<%= yeoman.app %>/scripts/main.js'
+                    ],
+                }
             }
         },
 ```
@@ -90,5 +110,5 @@ e.g. `prj.sh -t init -d sp`
 ↓
 
 ```javascript
-    grunt.registerTask('test', ['karma']);
+    grunt.registerTask('test', ['newer:jshint', 'karma']);
 ```
