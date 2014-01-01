@@ -1,7 +1,7 @@
 # initialize project
 
 ```shell
-  $ prj.sh -t init -d ${DEVICE} -n ${APP_NAMe}
+$ prj.sh -t init -d ${DEVICE} -n ${APP_NAME}
 ```
 
 e.g. `prj.sh -t init -d sp -n MyAppSp`
@@ -9,10 +9,18 @@ e.g. `prj.sh -t init -d sp -n MyAppSp`
 # build app
 
 ```shell
-  $ prj.sh -t build -d ${DEVICE}
+$ prj.sh -t build -d ${DEVICE}
 ```
 
 e.g. `prj.sh -t init -d sp`
+
+# directory
+
+  .
+  ├── dist
+  ├── pc
+  ├── sp
+  └── prj.sh
 
 # Modify prject config for myself
 
