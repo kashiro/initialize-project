@@ -62,7 +62,7 @@ if [ ${TYPE} = 'build' ] ; then
 
   ## execute grunt build
   cd ${DEVICE}
-  grunt build
+  grunt
   cd -
 
   ## copy built app
