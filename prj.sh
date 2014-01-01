@@ -44,6 +44,7 @@ if [ ${TYPE} = 'init' ] ; then
   mkdir ${DEVICE}
   cd ${DEVICE}
   yo webapp ${APP_NAME}
+  yo karma
   cd -
 
   exit 0
