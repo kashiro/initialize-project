@@ -45,12 +45,50 @@ e.g. `prj.sh -t init -d sp`
     }
 ```
 
-## package.json
+## Gruntfile.js
 
-add following dependencies
+### add `karma` task
 
-```json
-    "devDependencies": {
-        "grunt-karma": "*" 
-    }
+```javascript
+        karma: {
+            options: {
+                frameworks: 'mocha',
+                files: [
+                    '<%= yeoman.app %>/bower_components/**/*.js',
+                    '<%= yeoman.app %>/scripts/{,*/}*.js',
+                    'test/bower_components/chai/chai.js',
+                    'test/bower_components/mocha/mocha.js',
+                    'test/spec/{,*/}*.js',
+                    '!<%= yeoman.app %>/scripts/main.js'
+                ],
+                runnerPort: 8080,
+                singleRun: true,
+                browsers: ['PhantomJS']
+            }
+        },
+```
+
+### modify `test` task
+
+```javascript
+    grunt.registerTask('test', function(target) {
+        if (target !== 'watch') {
+            grunt.task.run([
+                'clean:server',
+                'concurrent:test',
+                'autoprefixer',
+            ]);
+        }
+    
+        grunt.task.run([
+            'connect:test',
+            'mocha'
+        ]);
+    });
+```
+
+↓
+
+```javascript
+    grunt.registerTask('test', ['karma']);
 ```
