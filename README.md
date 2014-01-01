@@ -16,11 +16,11 @@ e.g. `prj.sh -t init -d sp`
 
 # directory
 
-  .
-  ├── dist
-  ├── pc
-  ├── sp
-  └── prj.sh
+    .
+    ├── dist
+    ├── pc
+    ├── sp
+    └── prj.sh
 
 # Modify prject config for myself
 
