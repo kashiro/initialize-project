@@ -51,6 +51,7 @@ add following devdependency
 
 ```json
     "globals": {
+        "Class": true,
         "_": true,
         "Global": true,
         "$": true,
