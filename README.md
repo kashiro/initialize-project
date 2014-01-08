@@ -76,7 +76,8 @@ add following devdependency
                     singleRun: true,
                     browsers: ['PhantomJS'],
                     files: [
-                        '<%= yeoman.app %>/bower_components/**/*.js',
+                        '<%= yeoman.app %>/bower_components/query/jquery.min.js',
+                        '<%= yeoman.app %>/bower_components/underscore/underscore-min.js',
                         '<%= yeoman.app %>/scripts/{,*/}*.js',
                         'test/spec/{,*/}*.js',
                     ],
