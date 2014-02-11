@@ -41,6 +41,7 @@ add following devdependency
 
 ```javascript
   "devDependencies": {
+    "grunt-karma": "~0.6.2",
     "karma-expect": "~1.0.0",
     "karma-sinon": "~0.0.1",
     "karma-mocha": "*"
